@@ -60,8 +60,6 @@ This query produced the following result:
 
 The data above shows how the profits over the years have steadily increased with each year being more profitable than the other despite having a fall in sales in 2015.
 
-<!-- SUama -->
-
 ### 2. What are the total profits and total sales per quarter?
 
 >To create a new column of quarter
@@ -98,15 +96,20 @@ ORDER BY year, quarter
 ```
 This query produced the following result:
 
-![2](media/2.png)
+![2](media/2.png)\
 
-Computing the table above through Excel gives us the following:
+>Computing the table above through Excel gives us the following:
 
-<figure>
+![2a](media/2a.png)\
+*Quarters performance from 2014–2017*
+
+
+
+<!-- <figure>
   <img src = media\2a.png alt ="performance">
   <figcaption> Quarters performance from 2014–2017
   </figcaption>
-</figure>
+</figure> -->
 
 
 The result above shows that the period of October, November and December are best selling months with most profit.
