@@ -95,106 +95,102 @@ ORDER BY Total_Profit ASC
 
 -- 5. The relationship between discount and sales and the total discount per category
 
-SELECT Discount, AVG(Sales) AS Avg_Sales
-FROM superstore
-GROUP BY Discount
-ORDER BY Discount
+SELECT discount, AVG(sales) AS avg_sales
+FROM Superstore
+GROUP BY discount
+ORDER BY discount
 
-SELECT Discount, AVG(Sales) AS Avg_Sales
-FROM superstore
-GROUP BY Discount
-ORDER BY AVG_Sales DESC
+SELECT discount, AVG(sales) AS avg_sales
+FROM Superstore
+GROUP BY discount
+ORDER BY avg_sales DESC
 
 SELECT category, MAX(discount) AS total_discount
-FROM superstore
+FROM Superstore
 GROUP BY category
 ORDER BY total_discount DESC
 
 SELECT category, sub_category, MAX(discount) AS total_discount
-FROM superstore
+FROM Superstore
 GROUP BY category , sub_category
 ORDER BY total_discount DESC
 
 -- 6. What category generates the highest sales and profits in each region and state ?
 
 SELECT category, SUM(sales) AS total_sales, SUM(profit) AS total_profit, ROUND(SUM(profit)/SUM(sales)*100, 2) AS profit_margin
-FROM superstore
+FROM Superstore
 GROUP BY category
 ORDER BY total_profit DESC
 
 SELECT region, category, SUM(sales) AS total_sales, SUM(profit) AS total_profit
-FROM superstore
+FROM Superstore
 GROUP BY region, category
 ORDER BY total_profit DESC
 
 SELECT state, category, SUM(sales) AS total_sales, SUM(profit) AS total_profit
-FROM superstore
+FROM Superstore
 GROUP BY state, category
 ORDER BY total_profit DESC
 
 --7. What subcategory generates the highest sales and profits in each region and state ?
 
 SELECT sub_category, SUM(sales) AS total_sales, SUM(profit) AS total_profit, ROUND(SUM(profit)/SUM(sales)*100, 2) AS profit_margin
-FROM superstore
+FROM Superstore
 GROUP BY sub_category
 ORDER BY total_profit DESC
 
 SELECT region, sub_category, SUM(sales) AS total_sales, SUM(profit) AS total_profit
-FROM superstore
+FROM Superstore
 GROUP BY region, sub_category
 ORDER BY total_profit DESC
 
-SELECT state, sub_category, SUM(sales) AS total_sales, SUM(profit) AS total_profit
-FROM superstore
+SELECT state, sub_category, SUM(sales) AS total_sales, SUM(profit) AS total_profit 
+FROM Superstore
 GROUP BY state, sub_category
 ORDER BY total_profit DESC
 
 -- 8. What are the names of the products that are the most and least profitable to us?
 
-SELECT Product_Name, SUM(sales) AS total_sales, SUM(profit) AS total_profit
-FROM superstore
+SELECT product_name, SUM(sales) AS total_sales, SUM(profit) AS total_profit
+FROM Superstore
 GROUP BY product_name
 ORDER BY total_profit DESC
 
 
-SELECT Product_Name, SUM(sales) AS total_sales, SUM(profit) AS total_profit
-FROM superstore
+SELECT product_name, SUM(sales) AS total_sales, SUM(profit) AS total_profit
+FROM Superstore
+WHERE profit IS NOT NULL
 GROUP BY product_name
 ORDER BY total_profit ASC
 
 --9. What segment makes the most of our profits and sales ?
 
 SELECT segment, SUM(sales) AS total_sales, SUM(profit) AS total_profit
-FROM superstore
+FROM Superstore
 GROUP BY segment
 ORDER BY total_profit DESC
 
 
 -- 10. How many customers do we have in total and how much per region and state?
 
-SELECT COUNT(DISTINCT customer_id) AS Total_Customers
+SELECT COUNT(DISTINCT customer_id) AS total_customers
 FROM Superstore
 
-SELECT region, COUNT(DISTINCT customer_id) AS Total_Customers
+SELECT region, COUNT(DISTINCT customer_id) AS total_customers
 FROM Superstore
 GROUP BY region
-ORDER BY Total_Customers DESC
+ORDER BY total_customers DESC
 
-SELECT state, COUNT(DISTINCT customer_id) AS Total_Customers
+SELECT state, COUNT(DISTINCT customer_id) AS total_customers
 FROM Superstore
 GROUP BY state
-ORDER BY Total_Customers DESC
-
-SELECT state, COUNT(DISTINCT customer_id) AS Total_Customers
-FROM Superstore
-GROUP BY state
-ORDER BY Total_Customers ASC
+ORDER BY total_customers DESC
 
 -- 11. Customer rewards program
 
-SELECT TOP 15 Customer_ID, SUM(sales) AS total_sales, SUM(profit) AS total_profit
+SELECT TOP 15 customer_Id, SUM(sales) AS total_sales, SUM(profit) AS total_profit
 FROM superstore
-GROUP BY Customer_ID
+GROUP BY customer_id
 ORDER BY total_sales DESC
 
 -- 12. Average shipping time per class and in total
@@ -216,5 +212,5 @@ ORDER BY avg_shipping_time DESC */
 
 SELECT ship_mode , avg(DATEDIFF(day, order_date, ship_date)) AS avg_shipping_time
 FROM Superstore
-GROUP BY Ship_Mode
+GROUP BY ship_mode
 ORDER BY avg_shipping_time 

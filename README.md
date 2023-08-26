@@ -104,9 +104,10 @@ Computing the table above through Excel gives us the following:
 
 <figure>
   <img src = media\2a.png alt ="performance">
-  <figcaption>Quarters performance from 2014–2017
+  <figcaption> Quarters performance from 2014–2017
   </figcaption>
 </figure>
+
 
 The result above shows that the period of October, November and December are best selling months with most profit.
 
