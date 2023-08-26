@@ -1,4 +1,4 @@
-Select *
+Select Top 5 *
 FROM Superstore
 
 --What are total sales and total profits of each year?
@@ -13,7 +13,7 @@ UPDATE Superstore
 SET year = DATEPART(YEAR, Order_Date)
 
 SELECT year, SUM(sales) AS total_sales , SUM(profit) AS total_profit
-FROM superstore
+FROM Superstore
 GROUP BY year
 ORDER BY year ASC
 
@@ -26,30 +26,36 @@ WHEN DATEPART(month , Order_Date) IN (1,2,3) THEN 'Q1'
 WHEN DATEPART(month , Order_Date) IN (4,5,6) THEN 'Q2'
 WHEN DATEPART(month , Order_Date) IN (7,8,9) THEN 'Q3'
 ELSE 'Q4'
-END AS Quarter
-FROM superstore
+END AS quarter
+FROM Superstore
 Order by year
 
 ALTER TABLE Superstore
-ADD Quarter Varchar(10)
+ADD quarter Varchar(10)
 
 UPDATE Superstore
-SET Quarter = CASE
+SET quarter = CASE
 WHEN DATEPART(month , Order_Date) IN (1,2,3) THEN 'Q1'
 WHEN DATEPART(month , Order_Date) IN (4,5,6) THEN 'Q2'
 WHEN DATEPART(month , Order_Date) IN (7,8,9) THEN 'Q3'
 ELSE 'Q4'
 END 
 
-SELECT year, Quarter ,SUM(sales) AS Total_Sales , SUM (profit) as Total_Profit
+SELECT year, quarter ,SUM(sales) AS total_sales , SUM (profit) as total_profit
 FROM Superstore
-GROUP BY year, Quarter
-ORDER BY year, Quarter
+GROUP BY year, quarter
+ORDER BY year, quarter
+
+
+SELECT quarter AS Quarters_2014_2017 ,SUM(sales) AS Total_Sales , SUM (profit) as Total_Profit
+FROM Superstore
+GROUP BY quarter
+ORDER BY quarter
 
 --3. What region generates the highest sales and profits ?
 
 SELECT region, SUM(sales) AS total_sales , SUM(profit) AS total_profit
-FROM superstore
+FROM Superstore
 GROUP BY region
 ORDER BY total_profit DESC
 
@@ -63,25 +69,25 @@ ORDER BY profit_margin DESC
 
 --States
 
-SELECT TOP 10 State , SUM(sales) AS Total_Sales , SUM (profit) as Total_Profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
+SELECT TOP 10 State , SUM(sales) AS total_sales , SUM (profit) as total_profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
 FROM Superstore
 GROUP BY State
 ORDER BY Total_Profit DESC
 
-SELECT TOP 10 State , SUM(sales) AS Total_Sales , SUM (profit) as Total_Profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
+SELECT TOP 10 State , SUM(sales) AS total_sales , SUM (profit) as total_profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
 FROM Superstore
 GROUP BY State
 ORDER BY Total_Profit ASC
 
 -- Cities
 
-SELECT TOP 10 City , SUM(sales) AS Total_Sales , SUM (profit) as Total_Profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
+SELECT TOP 10 City , SUM(sales) AS total_sales , SUM (profit) as total_profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
 FROM Superstore
 GROUP BY City
 ORDER BY Total_Profit DESC
 
 
-SELECT TOP 10 City , SUM(sales) AS Total_Sales , SUM (profit) as Total_Profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
+SELECT TOP 10 City , SUM(sales) AS total_sales , SUM (profit) as total_profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
 FROM Superstore
 GROUP BY City
 ORDER BY Total_Profit ASC

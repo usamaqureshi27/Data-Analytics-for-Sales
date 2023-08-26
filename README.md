@@ -5,14 +5,22 @@
 The purpose of this project is to identify the patterns in products, regions, categories and customer segments for efficiency and profit optimization. Main Business Objectives are:\
 How can we optimize our profits?\
 What are the emerging trends that we can we identify?\
-How can we take these insights to build recommendations? 
+How can we take these insights to build recommendations?
 
 ## Tableau Dashboard
 
-The interactive Dashboards based upon Yearly and Quaterly sales aspects of collected data from 2014-2017 are linked below:\
+The interactive Dashboards based upon Yearly and Quaterly sales aspects from 2014-2017 of collected data are shown in images while links are atatched below:
 
-[Yearly](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/yearly?publish=yes)\
-[Quaterly](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/quartly?publish=yes)
+### Yearly
+[![dashboard](media/d1.png)](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/yearly)
+
+Click [here](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/yearly?publish=yes) for yearly dashboard
+
+### Quartly
+[![dashboard](media/d2.png)](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/quartly) 
+
+Click [here](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/quartly?publish=yes) for quartly dashboard
+
 
 ## Analysis Approach
 
@@ -130,3 +138,58 @@ This query produced the following result:
 
 ![3a](media/3a.png)
 
+### 4. What state and city brings in the highest sales and profits?
+
+#### States
+
+Which states are the top and bottom 10 in term of total sales and profit and profit margin.
+
+> For top 10 states, it can be found with the following code:
+``` SQL
+SELECT TOP 10 State , SUM(sales) AS total_sales , SUM (profit) as total_profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
+FROM Superstore
+GROUP BY State
+ORDER BY Total_Profit DESC
+```
+This query produced the following result:
+
+![4](media/4.png)
+
+> For bottom 10 states, it can be found with the following code:
+``` SQL
+SELECT TOP 10 State , SUM(sales) AS total_sales , SUM (profit) as total_profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
+FROM Superstore
+GROUP BY State
+ORDER BY Total_Profit ASC
+```
+This query produced the following result:
+
+![4a](media/4a.png)
+
+Profit margins are a measure of a company’s profitability and are expressed as the percentage of revenue that the company keeps as profit. So It can be seen that the West and East are really good. The South region despite almost selling less than half of the West region in revenue has a good profit margin of 11.93% which is great. However the Central region is still not convincing.
+
+#### Cities
+
+Which cities are the top and bottom 10 in term of total sales and profit and profit margin.
+
+> For top 10 cities, it can be found with the following code:
+``` SQL
+SELECT TOP 10 City , SUM(sales) AS total_sales , SUM (profit) as total_profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
+FROM Superstore
+GROUP BY City
+ORDER BY Total_Profit DESC
+```
+This query produced the following result:
+
+![4b](media/4b.png)
+
+> For bottom 10 cities, it can be found with the following code:
+``` SQL
+SELECT TOP 10 City , SUM(sales) AS total_sales , SUM (profit) as total_profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
+FROM Superstore
+GROUP BY City
+ORDER BY Total_Profit ASC
+```
+This query produced the following result:
+
+![4c](media/4c.png)
