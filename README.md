@@ -7,6 +7,8 @@ The purpose of this project is to identify the patterns in products, regions, ca
 + What are the emerging trends that we can we identify?
 + How can we take these insights to build recommendations?
 
+ A Sales Dashboard from company data is developed using **Tableau** and the data analysis is done using **SQL** to answer above business objectives.
+
 ## Tableau Dashboard
 
 The interactive Dashboards based upon Yearly and Quaterly sales aspects from 2014-2017 of collected data are shown in images below while subsequent links are atatched:
@@ -24,7 +26,7 @@ Click [here](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/Supe
 
 ## Analysis Approach
 
-The following questions and topics will be stringed out from data to answer business objectives.\
+The following set of questions and topics will be stringed out from data.\
 Let’s load data into SQL and check the first 5 rows to make sure it imported well.
 
 ```SQL
