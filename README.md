@@ -2,14 +2,14 @@
 
 ## Goal of the project
 
-The purpose of this project is to identify the patterns in products, regions, categories and customer segments for efficiency and profit optimization. Main Business Objectives are:\
-How can we optimize our profits?\
-What are the emerging trends that we can we identify?\
-How can we take these insights to build recommendations?
+The purpose of this project is to identify the patterns in products, regions, categories and customer segments for efficiency and profit optimization. Main Business Objectives are:
++ How can we optimize our profits?
++ What are the emerging trends that we can we identify?
++ How can we take these insights to build recommendations?
 
 ## Tableau Dashboard
 
-The interactive Dashboards based upon Yearly and Quaterly sales aspects from 2014-2017 of collected data are shown in images while links are atatched below:
+The interactive Dashboards based upon Yearly and Quaterly sales aspects from 2014-2017 of collected data are shown in images below while subsequent links are atatched:
 
 ### Yearly
 [![dashboard](media/d1.png)](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/yearly)
@@ -487,3 +487,17 @@ The above query produces the following results:
 ![12a](media/12a.png)
 
 Data shows, on average it takes 5 days to deliver product to customer on standard class.
+
+## Datasets Used
+The datasets used:
++ Comes with 9995 rows with 9994 being pure data and the other one row being the column headers.
++ This company sales data recorded between 3rd of January to 5th if January 2018.
++ It contains the data of 793 customers.
++ The data is publicly available through Kaggle under https://www.kaggle.com/datasets/vivek468/superstore-dataset-final
+
+## Built with
++ SQL Server Management Studio
++ Tableau
+
+## Authors
++ Usama Qureshi - [Github Profile](https://github.com/usamaqureshi27)
