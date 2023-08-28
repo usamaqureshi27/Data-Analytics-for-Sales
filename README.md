@@ -11,18 +11,11 @@ The purpose of this project is to identify the patterns in products, regions, ca
 
 ## Tableau Dashboard
 
-The interactive Dashboards based upon Yearly and Quaterly sales aspects from 2014-2017 of collected data are shown in images below while subsequent links are atatched:
+The interactive Dashboard based upon Yearly and Quaterly sales aspects from 2014-2017 of collected data is shown in images below while subsequent link is also atatched:
 
-### Yearly
-[![dashboard](media/yearly%20dashboard.png)](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/yearly)
+[![Dashboard](media/dashboard.png)](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/yearly?publish=yes)
 
-Click [here](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/yearly?publish=yes) for yearly dashboard
-
-### Quartly
-[![dashboard](media/d2.png)](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/quartly) 
-
-Click [here](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/quartly?publish=yes) for quartly dashboard
-
+Click [here](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/yearly?publish=yes) for interactive tableau dashboard.
 
 ## Analysis Approach
 
@@ -33,7 +26,6 @@ Let’s load data into SQL and check the first 5 rows to make sure it imported w
 Select TOP 5 *
 FROM Superstore
 ```
-
 ### 1. What are total sales and total profits of each year?
 
 First creating a year column from Date, which will be further use in analysis of data.
@@ -58,7 +50,8 @@ ORDER BY year ASC
 ```
 This query produced the following result:
 
-![1](media/1.png)
+![Alt text](1.png)
+<!-- ![](media/1.png) -->
 
 The data above shows how the profits over the years have steadily increased with each year being more profitable than the other despite having a fall in sales in 2015.
 
@@ -98,21 +91,16 @@ ORDER BY year, quarter
 ```
 This query produced the following result:
 
-![2](media/2.png)\
-
+<!-- ![2](media/2.png)\ -->
+![Alt text](2.png)
 >Computing the table above through Excel gives us the following:
 
 ![2a](media/2a.png)\
 *Quarters performance from 2014–2017*
 
-
-
-<!-- <figure>
-  <img src = media\2a.png alt ="performance">
+  <!-- <img src = media\2a.png alt ="performance">
   <figcaption> Quarters performance from 2014–2017
-  </figcaption>
-</figure> -->
-
+  </figcaption> -->
 
 The result above shows that the period of October, November and December are best selling months with most profit.
 
@@ -128,7 +116,8 @@ ORDER BY total_profit DESC
 ```
 This query produced the following result:
 
-![3](media/3.png)
+<!-- ![3](media/3.png) -->
+![Alt text](3.png)
 
 It can be observed that the West region is the one with the most sales and brings in the highest profits. The East region is pretty good looking. Those 2 regions are definitely areas of interest if company want to maximize our profits and expand business. Concerning the South region, it doesn't gain a lot of revenue but still the profits are there. It is the Central region that is quite alarming as it generates way more revenue than the South region but do not make at least the same profits over there. The Central region should be the one on watchlist.
 
@@ -142,7 +131,8 @@ ORDER BY profit_margin DESC
 ```
 This query produced the following result:
 
-![3a](media/3a.png)
+<!-- ![3a](media/3a.png) -->
+![Alt text](3a.png)
 
 Profit margins are a measure of a company’s profitability and are expressed as the percentage of revenue that the company keeps as profit. So It can be seen that the West and East are really good. The South region despite almost selling less than half of the West region in revenue has a good profit margin of 11.93% which is great. However the Central region is still not convincing.
 
@@ -163,7 +153,8 @@ ORDER BY Total_Profit DESC
 
 This query produced the following result:
 
-![4](media/4.png)
+<!-- ![4](media/4.png) -->
+![Alt text](4.png)
 
 > For bottom 10 states, it can be found with the following code:
 
@@ -176,7 +167,8 @@ ORDER BY Total_Profit ASC
 
 This query produced the following result:
 
-![4a](media/4a.png)
+<!-- ![4a](media/4a.png) -->
+![Alt text](4a.png)
 
 Our least profitable markets are listed above. The top 3 are Texas, Ohio and Pennsylvania. 
 
@@ -195,7 +187,8 @@ ORDER BY Total_Profit DESC
 
 This query produced the following result:
 
-![4b](media/4b.png)
+<!-- ![4b](media/4b.png) -->
+![Alt text](4b.png)
 
 The top 3 cities that we should focus on are New York City, Los Angeles and Seattle.
 
@@ -210,7 +203,8 @@ ORDER BY Total_Profit ASC
 
 This query produced the following result:
 
-![4c](media/4c.png)
+<!-- ![4c](media/4c.png) -->
+![Alt text](4c.png)
 
 The bottom 3 are Philadelphia, Houston and San Antonio.
 
@@ -227,7 +221,8 @@ ORDER BY discount
 
 This query produced the following result:
 
-![5](media/5.png)
+<!-- ![5](media/5.png) -->
+![Alt text](5.png)
 
 Seems that for each discount point, the average sales seem to vary a lot.
 
@@ -241,7 +236,8 @@ ORDER BY avg_sales DESC
 ```
 This query produced the following result:
 
-![5a](media/5a.png)
+<!-- ![5a](media/5a.png) -->
+![Alt text](5a.png)
 
 They almost have no linear relationship. However it is at least observed that at a 50% discount, average sales are the highest it can be.
 
@@ -255,7 +251,8 @@ ORDER BY total_discount DESC
 ```
 This query produced the following result:
 
-![5b](media/5b.png)
+<!-- ![5b](media/5b.png) -->
+![Alt text](5b.png)
 
 So Office supplies are the most discounted items followed by Furniture and Technology.
 
@@ -269,7 +266,8 @@ ORDER BY total_discount DESC
 ```
 This query produced the following result:
 
-![5c](media/5c.png)
+<!-- ![5c](media/5c.png) -->
+![Alt text](5c.png)
 
 Binders, Phones and Furnishings are the most discounted items.
 
@@ -285,7 +283,8 @@ ORDER BY total_profit DESC
 ```
 This query produced the following result:
 
-![6](media/6.png)
+<!-- ![6](media/6.png) -->
+![Alt text](6.png)
 
 Out of the 3, it is clear that Technology and Office Supplies are the best in terms of profits. Plus they seem like a good investment because of their profit margins. Furnitures are still making profits but do not convert well in overall.
 
@@ -299,7 +298,8 @@ ORDER BY total_profit DESC
 ```
 This query produced the following result:
 
-![6a](media/6a.png)
+<!-- ![6a](media/6a.png) -->
+![Alt text](6a.png)
 
 These are best categories in terms of total profits in each region. The West is in top 3 two times with Office Supplies and Technology and the East with Technology. Among the total profits, the only one that fails to break even is the Central Region with Furniture where it is operated at a loss when selling it there.
 
@@ -312,7 +312,8 @@ GROUP BY state, category
 ```
 This query produced the following result:
 
-![6b](media/6b.png)
+<!-- ![6b](media/6b.png) -->
+![Alt text](6b.png)
 
 The table above shows the most performing categories in each state. Technology in New York and Washington and Office Supplies in California. The 3 categories are all around good for top 3 markets except the furniture category in Washington which is good but not as great as the others.
 
@@ -327,7 +328,8 @@ ORDER BY total_profit DESC
 
 This query produced the following result:
 
-![7](media/7.png)
+<!-- ![7](media/7.png) -->
+![Alt text](7.png)
 
 Out of total 17 subcategories nationwide, the biggest profits comes from Copiers, Phones, Accessories and Paper. The profits and profit margins on Copiers and Papers especially are interesting for the long run. Losses came from Tables, Bookcases and Supplies where company is uncapable of breaking even.
 
@@ -341,7 +343,8 @@ ORDER BY total_profit DESC
 ```
 This query produced the following result:
 
-![7a](media/7a.png)
+<!-- ![7a](media/7a.png) -->
+![Alt text](7a.png)
 
 These above display the best subcategories per region.
 
@@ -355,7 +358,8 @@ ORDER BY total_profit DESC
 ```
 This query produced the following result:
 
-![7b](media/7b.png)
+<!-- ![7b](media/7b.png) -->
+![Alt text](7b.png)
 
 Machines, Phones and Binders perform very well in New York. Followed by Accessories and Binders in California and Michigan respectively.
 
@@ -371,7 +375,8 @@ ORDER BY total_profit DESC
 ```
 This query produces the following results:
 
-![8](media/8.png)
+<!-- ![8](media/8.png) -->
+![Alt text](8.png)
 
 These Copiers, Machines and Printers are definetly the main foundations of profits. The Canon imageClass 2200 Advanced Copier, Fellowes PB500 Electric Punch Plastic Comb Binding Machine with Manual Bind and the Hewlett Packard LaserJet 3310 Copier are top 3.
 
@@ -386,7 +391,8 @@ ORDER BY total_profit ASC
 ```
 This query produces the following results:
 
-![8a](media/8a.png)
+<!-- ![8a](media/8a.png) -->
+![Alt text](8a.png)
 
 The Cubify CubeX 3D Printer Double Head Print, Lexmark MX611dhe Monochrome Laser Printer and the Cubify CubeX 3D Printer Triple Head Print are the products that operate the most at a loss.
 
@@ -403,7 +409,8 @@ ORDER BY total_profit DESC
 
 The above query produces the following results:
 
-![9](media/9.png)
+<!-- ![9](media/9.png) -->
+![Alt text](9.png)
 
 The consumer segment brings in the most profit followed by Corporate and then Home office.
 
@@ -416,7 +423,8 @@ FROM Superstore
 ```
 The above query produces the following results:
 
-![10](media/10.png)
+<!-- ![10](media/10.png) -->
+![Alt text](10.png)
 
 Company had 793 customers between 2014 and 2017.
 
@@ -429,7 +437,8 @@ ORDER BY total_customers DESC
 ```
 The above query produces the following results:
 
-![10a](media/10a.png)
+<!-- ![10a](media/10a.png) -->
+![Alt text](10a.png)
 
 Company had customers moving around regions which explains why they all do not add up to 793. Since there could be double counting. The West is the area where it has the biggest market of all.
 
@@ -442,7 +451,8 @@ ORDER BY total_customers DESC
 ```
 The above query produces the following results:
 
-![10b](media/10b.png)
+<!-- ![10b](media/10b.png) -->
+![Alt text](10b.png)
 
 Company have the most customers in California, New York and Texas.
 
@@ -459,7 +469,8 @@ ORDER BY total_sales DESC
 ```
 The above query produces the following results:
 
-![11](media/11.png)
+<!-- ![11](media/11.png) -->
+![Alt text](11.png)
 
 The display of the customer names are on file but showing the unique Customer id is a form of pseudonymization for security reasons. What is actually interesting to see is that customer ID ‘SM-20320’ is the customer who spent the most but is not bringing most profit. But company still have to reward his/her loyalty. It is customer ID ‘TC-20980’ who is second in the list but brings the most profit.
 
@@ -474,7 +485,8 @@ FROM Superstore
 
 The above query produces the following results:
 
-![12](media/12.png)
+<!-- ![12](media/12.png) -->
+![Alt text](12.png)
 
 > To find the shipping time in each shipping mode:
 
@@ -486,7 +498,8 @@ ORDER BY avg_shipping_time
 ```
 The above query produces the following results:
 
-![12a](media/12a.png)
+<!-- ![12a](media/12a.png) -->
+![Alt text](12a.png)
 
 Data shows, on average it takes 5 days to deliver product to customer on standard class.
 
