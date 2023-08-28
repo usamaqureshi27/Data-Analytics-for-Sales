@@ -14,7 +14,7 @@ The purpose of this project is to identify the patterns in products, regions, ca
 The interactive Dashboards based upon Yearly and Quaterly sales aspects from 2014-2017 of collected data are shown in images below while subsequent links are atatched:
 
 ### Yearly
-[![dashboard](media/d1.png)](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/yearly)
+[![dashboard](media/yearly%20dashboard.png)](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/yearly)
 
 Click [here](https://public.tableau.com/app/profile/usama.zafar.qureshi/viz/SuperstoreData_16929735714910/yearly?publish=yes) for yearly dashboard
 
