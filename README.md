@@ -4,7 +4,7 @@
 
 The purpose of this project is to identify the patterns in products, regions, categories and customer segments for efficiency and profit optimization. Main Business Objectives are:
 + How can we optimize our profits?
-+ What are the emerging trends that we can we identify?
++ What are the emerging trends that we can identify?
 + How can we take these insights to build recommendations?
 
  A Sales Dashboard from company data is developed using **Tableau** and the data analysis is done using **SQL** to answer above business objectives, while **Excel** will serve as first repository for data.
@@ -29,7 +29,6 @@ Data will get processed and cleaned with the help of Excel by observing:
 + Check for missing data with the help of conditional formating
 + Remove duplicate rows
 + Correctly format columns for easy SQL analysis
-
 
 ## Analysis Approach
 
@@ -66,7 +65,7 @@ This query produced the following result:
 
 ![](media/1.png)
 
-The data above shows how the profits over the years have steadily increased with each year being more profitable than the other despite having a fall in sales in 2015.
+The data above shows how the profits over the years have steadily increased with each proceeding year being more profitable than the other despite having a fall in sales in 2015.
 
 ### 2. What are the total profits and total sales per quarter?
 
@@ -186,7 +185,7 @@ Our least profitable markets are listed above. The top 3 are Texas, Ohio and Pen
 Which cities are the top and bottom 10 in term of total sales and profit and profit margin.
 
 > For top 10 cities, it can be found with the following code:
-> 
+
 ``` SQL
 SELECT TOP 10 City , SUM(sales) AS total_sales , SUM (profit) as total_profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
 FROM Superstore
@@ -201,7 +200,7 @@ This query produced the following result:
 The top 3 cities that we should focus on are New York City, Los Angeles and Seattle.
 
 > For bottom 10 cities, it can be found with the following code:
-> 
+
 ``` SQL
 SELECT TOP 10 City , SUM(sales) AS total_sales , SUM (profit) as total_profit ,  ROUND((SUM(profit) / sum(sales)) * 100,2) AS profit_margin
 FROM Superstore
@@ -363,7 +362,7 @@ Machines, Phones and Binders perform very well in New York. Followed by Accessor
 ### 8. What are the names of the products that are the most and least profitable to us?
 
 > To get most profitable products, following query is made:
-> 
+
 ```SQL
 SELECT product_name, SUM(sales) AS total_sales, SUM(profit) AS total_profit
 FROM Superstore
@@ -411,6 +410,7 @@ The consumer segment brings in the most profit followed by Corporate and then Ho
 ### 10. How many customers do we have in total and how much per region and state?
 
 > Total number of customers can be found by:
+
 ```SQL
 SELECT COUNT(DISTINCT customer_id) AS total_customers
 FROM Superstore
@@ -422,6 +422,7 @@ The above query produces the following results:
 Company had 793 customers between 2014 and 2017.
 
 > Total number of customers based upon region:
+
 ```SQL
 SELECT region, COUNT(DISTINCT customer_id) AS total_customers
 FROM Superstore
@@ -435,6 +436,7 @@ The above query produces the following results:
 Company had customers moving around regions which explains why they all do not add up to 793. Since there could be double counting. The West is the area where it has the biggest market of all.
 
 > Total number of customers based upon state:
+
 ```SQL
 SELECT state, COUNT(DISTINCT customer_id) AS total_customers
 FROM Superstore
@@ -452,6 +454,7 @@ Company have the most customers in California, New York and Texas.
 To build a loyalty and rewards program in the future. What customers spent the most with company? That is generated the most sales. It is always important to cater for best customers and see how company can provide more value to them as it its cheaper to keep a current customer than it is to acquire a new one.
 
 > To check the customers with most business and profit with the company:
+
 ```SQL
 SELECT TOP 15 customer_Id, SUM(sales) AS total_sales, SUM(profit) AS total_profit
 FROM superstore
